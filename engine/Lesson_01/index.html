@@ -1,75 +1,14 @@
 <!DOCTYPE html>
-
-<html>
-  <head>
-    <title>Lesson 1</title>
-    <style type="text/css">
-      html, body {
-        margin: 0;
-        padding: 0;
-        width: 100%;
-        height: 100%;
-        overflow: hidden;
-      }
-      
-      #main-canvas {
-        margin: 0;
-        padding: 0;
-        width: 50%;
-        height: 50%;
-        background: #00002B;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-      }
-    </style>
-  </head>
-  <body>
-    <canvas id="main-canvas"></canvas>
-  </body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson_01</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <h1>Lesson_01</h1>
+  <canvas id="main-canvas"></canvas>
+  <script src="src/App.js"></script>
+</body>
 </html>
-
-<script type="text/javascript">
-const canvas = document.getElementById("main-canvas");
-
-// canvas 在屏幕上的实际宽高
-const canvasRect = canvas.getBoundingClientRect();
-const width = canvasRect.width;
-const height = canvasRect.height;
-console.log("屏幕宽高", width, height);
-
-// 设置 canvas 的逻辑宽高
-canvas.width = width;
-canvas.height = height;
-
-// 绘制图片
-const ctx = canvas.getContext("2d");
-
-const imageWidth = 16;
-const imageHeight = 16;
-
-const image00 = new Image();
-image00.src = "res/image/cross.png";
-image00.onload = () => {
-  ctx.drawImage(image00, -imageWidth / 2, -imageHeight / 2, imageWidth, imageHeight);
-}
-
-const image01 = new Image();
-image01.src = "res/image/cross.png";
-image01.onload = () => {
-  ctx.drawImage(image01, - imageWidth / 2, canvas.height - imageHeight / 2, imageWidth, imageHeight);
-}
-
-const image11 = new Image();
-image11.src = "res/image/cross.png";
-image11.onload = () => {
-  ctx.drawImage(image11, width - imageWidth / 2, height - imageHeight / 2, imageWidth, imageHeight);
-}
-
-const image10 = new Image();
-image10.src = "res/image/cross.png";
-image10.onload = () => {
-  ctx.drawImage(image10, width - imageWidth / 2, -imageHeight / 2, imageWidth, imageHeight);
-}
-</script>
