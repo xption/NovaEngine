@@ -9,16 +9,8 @@ html, body {
   align-items: center; /* 垂直居中整体内容 */
 }
 
-h1 {
-  margin: 0;
-  padding: 10px;
-  font-size: 24px;
-  text-align: center; /* 确保文字水平居中 */
-}
-
 canvas {
   display: block;
   width: 50vw; /* CSS 宽度为屏幕宽度的一半 */
   height: 50vh; /* CSS 高度为屏幕高度的一半 */
-  border: 1px solid black; /* 边框用于清晰查看大小 */
 }
