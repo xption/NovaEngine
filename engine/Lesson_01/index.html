@@ -8,6 +8,13 @@
 </head>
 <body>
   <canvas id="main-canvas"></canvas>
-  <script src="src/App.js"></script>
+  <script type="module">
+    import { GameApp } from "./game/src/GameApp.js";
+
+    const canvas = document.getElementById('main-canvas');
+    const gameApp = new GameApp(canvas);
+    gameApp.init();
+    gameApp.run();
+  </script>
 </body>
 </html>
