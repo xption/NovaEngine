@@ -15,18 +15,27 @@ export class NVApp {
 
   run() {
     // 开始帧循环
-    window.requestAnimationFrame(this.update);
+    window.requestAnimationFrame(this.gameLoop);
   }
 
-  update = () => {
-    this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+  gameLoop = () => {
+    // 更新游戏逻辑
+    this.update();
 
+    // 绘制
     this.draw();
 
-    window.requestAnimationFrame(this.update);
+    window.requestAnimationFrame(this.gameLoop);
+  }
+
+  update() {
   }
 
   draw() {
+    // 清理前一帧的图像
+    this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+
+    // 绘制
     this.ctx.fillStyle = 'lightblue';
     this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
 
@@ -36,6 +45,9 @@ export class NVApp {
     this.ctx.fillStyle = 'red';
     this.ctx.font = '20px Arial';
     this.ctx.fillText('size: ' + this.canvas.width + ' : ' + this.canvas.height, 0, 230);
+
+    const currentTime = new Date().toLocaleTimeString();
+    this.ctx.fillText('当前时间: ' + currentTime, 0, 260);
   }
 
   // 设置 canvas 的逻辑宽高
