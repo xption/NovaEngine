@@ -26,13 +26,47 @@
 </head>
 <body>
   <canvas id="main-canvas"></canvas>
-  <script type="module">
-    import { GameApp } from "./game/src/GameApp.js";
-
+  <script type="text/javascript">
+    /************************************************************
+     * 设置 canvas 的逻辑宽高
+     ************************************************************/
     const canvas = document.getElementById('main-canvas');
-    const gameApp = new GameApp(canvas);
-    gameApp.init();
-    gameApp.run();
+    const canvasRect = canvas.getBoundingClientRect();
+    canvas.width = canvasRect.width;
+    canvas.height = canvasRect.height;
+
+    /************************************************************
+     * 绘制内容
+     ************************************************************/
+    const context = canvas.getContext('2d');
+    context.fillStyle = 'lightblue';
+    context.fillRect(0, 0, canvas.width, canvas.height);
+
+    context.fillStyle = 'red';
+    context.fillRect(0, 0, canvas.width / 2, canvas.height / 2);
+
+    /************************************************************
+     * 窗口大小变化
+     ************************************************************/
+    window.addEventListener('resize', () => {
+      /************************************************************
+       * 设置 canvas 的逻辑宽高
+       ************************************************************/
+      const canvas = document.getElementById('main-canvas');
+      const canvasRect = canvas.getBoundingClientRect();
+      canvas.width = canvasRect.width;
+      canvas.height = canvasRect.height;
+
+      /************************************************************
+       * 绘制内容
+       ************************************************************/
+      const context = canvas.getContext('2d');
+      context.fillStyle = 'lightblue';
+      context.fillRect(0, 0, canvas.width, canvas.height);
+
+      context.fillStyle = 'red';
+      context.fillRect(0, 0, canvas.width / 2, canvas.height / 2);
+    });
   </script>
 </body>
 </html>
