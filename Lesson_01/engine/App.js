@@ -31,7 +31,7 @@ export class NVApp {
   }
 
   update() {
-    this.timeString = new Date().toLocaleTimeString();
+    this.timeString = '当前时间: ' + new Date().toLocaleTimeString();
   }
 
   draw() {
@@ -49,7 +49,7 @@ export class NVApp {
     this.ctx.font = '20px Arial';
     this.ctx.fillText('size: ' + this.canvas.width + ' : ' + this.canvas.height, 0, 230);
 
-    this.ctx.fillText('当前时间: ' + this.timeString, 0, 260);
+    this.ctx.fillText(this.timeString, 0, 260);
   }
 
   // 设置 canvas 的逻辑宽高

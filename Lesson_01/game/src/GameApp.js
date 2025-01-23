@@ -8,4 +8,8 @@ export class GameApp extends NVApp {
   init() {
     super.init();
   }
+
+  update() {
+    this.timeString = "GameApp 计算的时间：" + new Date().toLocaleTimeString();
+  }
 }
